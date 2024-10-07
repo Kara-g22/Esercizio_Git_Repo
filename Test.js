@@ -18,3 +18,9 @@ console.log(toastCost);
 let sum= (3+6)*2
 
 console.log(sum)
+
+let nome= "Marco ";
+let cognome= "Grassi"; 
+let fullName= nome+cognome;
+
+console.log(fullName);
