@@ -1,26 +1,31 @@
-let rettangoloHeight= 2;
-let rettangoloWidth= 1;
+let israinig=true;
+let temperature=25;
+let giorno=27;
+let tax=true;
 
-let radiusCircle= 3;
+if (isRaining=true){
+    console.log("Prendi l'ombrello");
+    if(temperature<=25){
+        console.log("Copriti bene");
+    }
+    else{
+        console.log("Tutto sommato non c'è freddo")
+    }
+}
+    
+else {
+    console.log("Goditi il sole");
+}
 
-let lasagnaCost= 24
-let pizzaCost= 12
-let toastCost= 5
-
-console.log(rettangoloHeight);
-console.log(rettangoloWidth);
-
-console.log(radiusCircle);
-console.log(lasagnaCost);
-console.log(pizzaCost);
-console.log(toastCost);
-
-let sum= (3+6)*2
-
-console.log(sum)
-
-let nome= "Marco ";
-let cognome= "Grassi"; 
-let fullName= nome+cognome;
-
-console.log(fullName);
+switch(giorno){
+    case 27:
+        console.log("Oggi arriva lo stipensio")
+        if(tax==true){
+            console.log("Devi pagare le tasse")
+        }else{
+            console.log("Puoi mangiarti una pizza")
+        }
+        break;
+        default:
+            console.log("Dovrei ancora aspettare")
+}
