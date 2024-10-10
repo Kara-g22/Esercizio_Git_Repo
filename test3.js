@@ -38,3 +38,59 @@
 // }
 
 // console.log("Done");
+
+
+// let nome= "Marco";
+// let cognome="Grassi";
+
+// function welcome(a, b) {
+//     let saluto= "Ciao "+ a +" "+ b;
+//     return saluto
+
+// }
+
+// console.log(welcome(nome, cognome));
+
+
+// let num=3;
+// let numero=6
+
+// function somma(a,b){
+//     let sum= a+b;
+//     return sum
+// }
+// function divisione(a, b) {
+//     let divs= a/b;
+//     return divs    
+// }
+// function moltiplicazione(a,b) {
+//     let molt= a*b;
+//     return molt
+// }
+
+// console.log(somma(num,numero),divisione(num,numero),moltiplicazione(num,numero));
+
+
+
+let num=3;
+let numero=6
+
+function operazione(a,b) {
+    let risultato= somma(a,b)+divisione(a,b)+moltiplicazione(a,b);
+    function somma(a,b){
+        let sum= a+b;
+        return sum
+    }
+    function divisione(a, b) {
+        let divs= a/b;
+        return divs    
+    }
+    function moltiplicazione(a,b) {
+        let molt= a*b;
+        return molt
+    }
+
+    return risultato
+}
+
+console.log(operazione(num,numero));
