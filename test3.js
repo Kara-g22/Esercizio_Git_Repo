@@ -22,19 +22,19 @@
 
     //ESERCIZIO 3 IF/ELSE
 
-let primitive= false;
+// let primitive= false;
 
-if(typeof primitive === 'number'){
-    console.log("La variabile è di tipo:");
-    console.log(typeof primitive);
-}else if(typeof primitive === 'string'){
-    console.log("La variabile è di tipo:");
-    console.log(typeof primitive);
-}else if(typeof primitive === 'boolean'){
-    console.log("La variabile è di tipo:");
-    console.log(typeof primitive);
-}else{
-    console.log("La variabile è di tipo sconosciuto")
-}
+// if(typeof primitive === 'number'){
+//     console.log("La variabile è di tipo:");
+//     console.log(typeof primitive);
+// }else if(typeof primitive === 'string'){
+//     console.log("La variabile è di tipo:");
+//     console.log(typeof primitive);
+// }else if(typeof primitive === 'boolean'){
+//     console.log("La variabile è di tipo:");
+//     console.log(typeof primitive);
+// }else{
+//     console.log("La variabile è di tipo sconosciuto")
+// }
 
-console.log("Done");
+// console.log("Done");
