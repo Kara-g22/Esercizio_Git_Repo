@@ -72,25 +72,60 @@
 
 
 
-let num=3;
-let numero=6
+// let num=3;
+// let numero=6
 
-function operazione(a,b) {
-    let risultato= somma(a,b)+divisione(a,b)+moltiplicazione(a,b);
-    function somma(a,b){
-        let sum= a+b;
-        return sum
-    }
-    function divisione(a, b) {
-        let divs= a/b;
-        return divs    
-    }
-    function moltiplicazione(a,b) {
-        let molt= a*b;
-        return molt
-    }
+// function operazione(a,b) {
+//     let risultato= somma(a,b)+divisione(a,b)+moltiplicazione(a,b);
+//     function somma(a,b){
+//         let sum= a+b;
+//         return sum
+//     }
+//     function divisione(a, b) {
+//         let divs= a/b;
+//         return divs    
+//     }
+//     function moltiplicazione(a,b) {
+//         let molt= a*b;
+//         return molt
+//     }
 
-    return risultato
+//     return risultato
+// }
+
+// console.log(operazione(num,numero));
+
+
+let prezzoCamera= "BB";
+
+
+switch (prezzoCamera) {
+    case "BB":
+        console.log("il prezzo della stanza BB è 50 Euro");
+        break;
+    case "HB":
+        console.log("Il prezzo della camera HB è 80 Euro");
+        break;
+    case "FB":
+        console.log("Il prezzo della camera FB è 100 Euro");
+        break;
+
+    default:
+        console.log("Camera non valida")
+        break;
 }
 
-console.log(operazione(num,numero));
+
+let age = 16; 
+let message = (age >= 18) ? "You can drive a car" : "You are too young to drive";
+console.log(message);
+
+let number= 7;
+let num=(number>0)?"The number is positive":"The number is negative";
+console.log(num);
+
+let isSunnyDay= true;
+let isHomeworkCompleted= false;
+
+let canGoOut= (isSunnyDay===true && isHomeworkCompleted===true) ? "Jesse can go out to play" : "Jasse stay at home";
+console.log(canGoOut);
