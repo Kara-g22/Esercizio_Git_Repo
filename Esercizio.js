@@ -282,3 +282,4 @@ function calcoloSomma(i,b) {
     
 }
 calcoloSomma(2,60)
+
