@@ -53,19 +53,3 @@
 // simulaPartita(SquadraA,SquadraB);
 
 
-class Smartphone {
-    constructor(brand,name,price){
-        this.brand=brand;
-        this.name=name;
-        this.price=price;}
-
-    }
-
-
-let Smartphone1= new Smartphone("Apple","iphone",1300);
-let Smartphone2= new Smartphone("Samsung","Galaxy",800);
-let Smartphone3= new Smartphone("Nokia","3310",65);
-
-console.log(Smartphone1);
-console.log(Smartphone2);
-console.log(Smartphone3);
