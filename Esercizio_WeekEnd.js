@@ -44,8 +44,8 @@
 
 
 // const frutti = ["apple", "banana", "apple", "orange", "banana", "banana"];
-// let conteggio = frutti.reduce((acc,cur) => { //acc=oggetto, cur=chiave analizzata
-//     acc[cur] = (acc[cur]||0) +1;  //acc[cur] || 0: Significa che, se acc[cur] è definito (cioè il frutto è già nell'oggetto acc), usa il suo valore. Altrimenti, usa 0 come valore iniziale.
+// let conteggio = frutti.reduce((acc,cur) => { 
+//     acc[cur] = (acc[cur]||0) +1;  
 //     return acc;
 // },{});
 // console.log(conteggio);
@@ -71,3 +71,16 @@
 // const quadratoPari= newNumeri.map((num)=> num**2);
 // const sommaQuadrati= quadratoPari.reduce((a,b)=> a+b,0);
 // console.log(sommaQuadrati);
+
+
+
+
+                    
+                
+                 
+                
+                        
+                
+                
+                
+                
