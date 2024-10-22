@@ -20,36 +20,36 @@
 //        - "La partita [nomeSquadraA] - [nomeSquadraB] è finita in parità [golA] a [golB]"
 
 
-// class Squadra {
-//     constructor(nome,allenatore,gol){
-//         this.nome=nome;
-//         this.allenatore=allenatore;
-//         this.gol=gol;
-//     }
-//     giocaPartita(){
-//         this.gol=Math.floor(Math.random()*10);
-//     }
-// }
+class Squadra {
+    constructor(nome,allenatore,gol){
+        this.nome=nome;
+        this.allenatore=allenatore;
+        this.gol=gol;
+    }
+    giocaPartita(){
+        this.gol=Math.floor(Math.random()*10);
+    }
+}
 
-// let SquadraA = new Squadra ("Milan","Fonseca",0);
-// let SquadraB = new Squadra ("Inter","Inzaghi",0);
+let SquadraA = new Squadra ("Milan","Fonseca",0);
+let SquadraB = new Squadra ("Inter","Inzaghi",0);
 
-// let simulaPartita=function(a,b) {
-//     a.giocaPartita();
-//     b.giocaPartita();
+let simulaPartita=function(a,b) {
+    a.giocaPartita();
+    b.giocaPartita();
 
-//     if (a.gol>b.gol) {
-//         console.log(`${a.nome} vince contro ${b.nome}: ${a.gol} - ${b.gol}`);
+    if (a.gol>b.gol) {
+        console.log(`${a.nome} vince contro ${b.nome}: ${a.gol} - ${b.gol}`);
         
-//     }else if(b.gol>a.gol){
-//         console.log(`${b.nome} vince contro ${a.nome}: ${b.gol} - ${a.gol}`);
-//     }else if(a.gol===b.gol){
-//         console.log(`${a.nome} pareggia contro ${b.nome}: ${a.gol} - ${b.gol}`);
-//     }
+    }else if(b.gol>a.gol){
+        console.log(`${b.nome} vince contro ${a.nome}: ${b.gol} - ${a.gol}`);
+    }else if(a.gol===b.gol){
+        console.log(`${a.nome} pareggia contro ${b.nome}: ${a.gol} - ${b.gol}`);
+    }
 
     
-// }
+}
 
-// simulaPartita(SquadraA,SquadraB);
+simulaPartita(SquadraA,SquadraB);
 
 
