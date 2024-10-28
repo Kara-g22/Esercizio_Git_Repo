@@ -53,11 +53,3 @@
 // console.log(nomeUltimoProdotto);
 
 
-let a = 5;
-let b = 10;
-
-const ab=[a,b];
-
-const [valoreA=b,valoreB=a] = ab 
-console.log(a);
-console.log(b);
