@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>Cose da Fare</h1>
+    <input type="text" id="text-input" placeholder="inserisci testo">
+    <button id="add-button">Aggiungi</button>
+    <ul id="task-list"></ul>
+    <script>
+        const addTask= () => {
+            const ul=document.getElementById(`task-list`);
+            const input= document.getElementById(`text-input`);
+
+            const li= document.createElement(`li`);
+            const checkBox= document.createElement(`input`);
+
+            li.innerText = input.value;
+
+            checkBox.setAttribute("type","checkbox");
+
+            li.appendChild(checkBox);
+            ul.appendChild(li);
+
+            input.value= "";
+        }
+
+        document.getElementById("add-button").addEventListener("click", addTask);
+
+    </script>
+</body>
+</html>
