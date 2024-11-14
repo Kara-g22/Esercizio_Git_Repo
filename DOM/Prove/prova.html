@@ -3,66 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pokedex</title>
     <style>
-        .utente{
-            background-color: rgba(128, 128, 128, 0.445);
-            padding: 0px 15px;
-            border-radius: 8px;
+        body{
+            background-color: lightgrey;
             display: flex;
-            gap: 30px;
-            max-width: fit-content;
-            border: 1px solid black;
-            box-shadow: 7px 10px 14px -6px rgba(0,0,0,0.71);
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
         }
+        .box{
+            background-color: white;
+            box-shadow: 5px 5px 15px 5px #000000;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 20%;
+            padding: 30px;
+            gap: 20px;
+        }
+        .text-input{
+            border: 1px solid rgba(0, 0, 0, 0.237);
+            border-radius: 5px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .text-input:focus{
+            border: 1px solid black;
+        }
+        #add-button{
+            background-color: rgb(29, 194, 29);
+            padding: 5px 10px;
+            border-radius: 10px;
+            color: white;
+            border: none;
+        }
+        #add-button:hover{
+            cursor: pointer;
+            background-color: rgb(23, 122, 23);
+        }
+        .list-seen{
+            background-color: lightgrey;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .list-item{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+        .box-input{
+            display: flex;
+            gap: 3px;
+            justify-content: space-between;
+        }
+        .new-button{
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: none;
+        }
+        .new-button:hover{
+            cursor: pointer;
+            background-color: rgb(130, 2, 2);
+        }   
     </style>
 </head>
 <body>
+    <div class="box">
+        <h1>Catturiamoli!</h1>
+        <input type="text" class="text-input" placeholder="Enter Pokémon name">
+        <button id="add-button" onclick="addPokemon()">Add</button>
+        <ul class="list"></ul>
+    </div>
     <script>
-            const persone = [
-    {
-        id: 1,
-        name: "Marco",
-        email: "Marco@gmail.com"         
-    },
-    {
-        id: 2,
-        name: "Matteo",
-        email: "Matteo@gmail.com"         
-    },
-    {
-        id: 3,
-        name: "Luca",
-        email: "Luca@gmail.com"         
-    },
-    {
-        id: 4,
-        name: "Giulio",
-        email: "Giulio@gmail.com"         
-    },
-];
+        const addPokemon = async () => {
+            const ul = document.querySelector('.list');
+            const input = document.querySelector('.text-input');
+            const nomePokemon = input.value.toLowerCase();
 
-function render(persona) {
-    const creadiv = document.createElement("div");
-    document.body.appendChild(creadiv);
-    creadiv.classList.add("utente");
-    creadiv.id = persona.id;
-    creadiv.innerHTML = `<p>${persona.name}</p> <p>${persona.email}</p>`;    
-}
+            try {
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${nomePokemon}`);
+                if (!response.ok) {
+                    alert('Pokemon non esistente');
+                    return;
+                }
 
-function renderPerson(arr) {
-    arr.forEach((element, index) => {
-        setTimeout(() => {
-            render(element);
-        }, index * 2000); 
-    });
-}
+                const data = await response.json();
+                const pokemonName = data.name;
+                const pokemonImg = data.sprites.versions["generation-v"]["black-white"].animated.front_default;
 
 
-renderPerson(persone);
+                const li = document.createElement('li');
+                li.setAttribute('class', 'list-item');
 
-   
+                const boxImg = document.createElement('div');
+                boxImg.setAttribute('class', 'box-img');
+
+                const pokemonIcon = document.createElement('img');
+                pokemonIcon.setAttribute('src', pokemonImg);
+                pokemonIcon.setAttribute('alt', pokemonName);
+
+                const boxInput = document.createElement('div');
+                boxInput.setAttribute('class', 'box-input');
+
+                const checkBox = document.createElement('input');
+                checkBox.setAttribute('type', 'checkbox');
+
+                const newButton = document.createElement('button');
+                newButton.setAttribute('class', 'new-button');
+                newButton.innerText = "Remove";
+
+                
+                li.innerText = pokemonName;
+                ul.appendChild(li);
+                li.appendChild(boxImg);
+                boxImg.appendChild(pokemonIcon);
+                li.appendChild(boxInput);
+                boxInput.appendChild(checkBox);
+                boxInput.appendChild(newButton);
+
+                
+                newButton.addEventListener('click', () => { ul.removeChild(li); });
+
+                
+                ul.classList.add("list-seen");
+
+                
+                input.value = "";
+            } catch (error) {
+                console.error(error);
+            }
+        }
     </script>
-    
 </body>
 </html>
